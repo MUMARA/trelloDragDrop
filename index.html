@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drag & Drop</title>
+</head>
+
+<link rel="stylesheet" href="libs/angular-material/angular-material.css">
+
+<script src="libs/angular/angular.js"></script>
+<script src="libs/angular-animate/angular-animate.js"></script>
+<script src="libs/angular-aria/angular-aria.js"></script>
+<script src="libs/angular-messages/angular-messages.js"></script>
+<script src="libs/angular-material/angular-material.js"></script>
+<script src="libs/angular-sortable-view/src/angular-sortable-view.js"></script>
+<script src="app.js"></script>
+
+<body ng-app="myApp" ng-controller="appController">
+
+<md-input-container class="md-block" flex-gt-sm>
+    <label>Add Todo</label>
+    <input ng-model="user">
+    <md-button md-no-ink class="md-primary" ng-click="task(user)">Submit</md-button>
+</md-input-container>
+
+
+<md-content sv-root class="md-padding" layout="row">
+    <div sv-part="value" ng-repeat="(key , value) in project" flex-xs flex-gt-xs="25" layout="column">
+        <md-card>
+            <md-toolbar class="md-theme-light">
+                <h1 class="md-toolbar-tools" ng-bind="key"></h1>
+            </md-toolbar>
+            <md-card ng-repeat="item in value" sv-element>
+                <md-card-title>
+                    <h4> {{item}} </h4>
+                </md-card-title>
+            </md-card>
+        </md-card>
+    </div>
+</md-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<md-input-container class="md-block" flex-gt-sm>
+    <label>Add Todo</label>
+    <input ng-model="user">
+    <md-button md-no-ink class="md-primary" ng-click="task(user)">Submit</md-button>
+</md-input-container>
+
+
+<md-content sv-root class="md-padding" layout="row">
+    <div sv-part="value" ng-repeat="(key , value) in project" flex-xs flex-gt-xs="25" layout="column">
+        <md-card>
+            <md-toolbar class="md-theme-light">
+                <h1 class="md-toolbar-tools" ng-bind="key"></h1>
+            </md-toolbar>
+            <md-card ng-repeat="item in value" sv-element>
+                <md-card-title>
+                    <h4> {{item}} </h4>
+                </md-card-title>
+            </md-card>
+        </md-card>
+    </div>
+</md-content>-->
+
+
+</body>
+</html>

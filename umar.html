@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="libs/angular-material/angular-material.css">
+    <script src="libs/angular/angular.js"></script>
+    <script src="libs/angular-animate/angular-animate.js"></script>
+    <script src="libs/angular-aria/angular-aria.js"></script>
+    <script src="libs/angular-messages/angular-messages.js"></script>
+    <script src="libs/angular-material/angular-material.js"></script>
+    <script src="libs/angular-sortable-view/src/angular-sortable-view.js"></script>
+
+    <script>
+        angular.module('a', ['ngMaterial', 'angular-sortable-view']).controller('c', function ($scope) {
+
+            $scope.data = {
+                items1: ["1.1", "sfdsf"],
+                items2: ["2.0"],
+                items3: ["3.0"]
+            };
+
+        });
+
+
+    </script>
+
+    <meta charset="UTF-8">
+    <title>UMR DRAG & DROP</title>
+
+</head>
+<body ng-app="a" ng-controller="c">
+<md-toolbar layout="row" class="md-warn md-raised md-hue-2">
+    <div class="md-toolbar-tools">
+        <span>Demo 3</span>
+    </div>
+</md-toolbar>
+<div ng-cloak layout="row" sv-root>
+
+    <md-content class="md-padding" layout-xs="column" layout="row" class="multi-sortable">
+
+        <div layout="column">
+            <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
+                <md-card-title>
+                    <md-card-title-text class="md-raised md-primary" style="min-height: 10px;">
+                        <div class="sortable-container" class="md-primary" sv-part="data.items1">
+                            <div ng-repeat="item in data.items1" sv-element="opts" class="well">
+                                {{item}}
+                            </div>
+                        </div>
+
+                    </md-card-title-text>
+                    <md-card-title-media>
+                        <div class="md-media-sm card-media"></div>
+                    </md-card-title-media>
+                </md-card-title>
+
+            </md-card>
+        </div>
+
+    </md-content>
+
+    <md-content class="md-padding" layout-xs="column" layout="row" class="multi-sortable">
+
+        <div layout="column">
+            <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
+                <md-card-title>
+                    <md-card-title-text class="md-raised md-primary" style="min-height: 10px;">
+                        <div class="sortable-container" class="md-primary" sv-part="data.items2">
+                            <div ng-repeat="item in data.items2" sv-element="opts" class="well">
+                                {{item}}
+                            </div>
+                        </div>
+
+                    </md-card-title-text>
+                    <md-card-title-media>
+                        <div class="md-media-sm card-media"></div>
+                    </md-card-title-media>
+                </md-card-title>
+
+            </md-card>
+        </div>
+
+    </md-content>
+
+    <md-content class="md-padding" layout-xs="column" layout="row" class="multi-sortable">
+
+        <div layout="column">
+            <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
+                <md-card-title>
+                    <md-card-title-text class="md-raised md-primary" style="min-height: 10px;">
+                        <div class="sortable-container" class="md-primary" sv-part="data.items3">
+                            <div ng-repeat="item in data.items3" sv-element="opts" class="well">
+                                {{item}}
+                            </div>
+                        </div>
+
+                    </md-card-title-text>
+                    <md-card-title-media>
+                        <div class="md-media-sm card-media"></div>
+                    </md-card-title-media>
+                </md-card-title>
+
+            </md-card>
+        </div>
+
+    </md-content>
+
+
+</div>
+</body>
+</html>
